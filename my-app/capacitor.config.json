@@ -1,0 +1,10 @@
+{
+  "appId": "royalbank.com",
+  "appName": "Royal-Bank",
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": false
+    }
+  }
+}
