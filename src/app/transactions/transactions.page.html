@@ -1,0 +1,58 @@
+<ion-content>
+  <!-- Top Section: Swipeable Account Cards -->
+  <div class="top-section">
+    <h2>Account Profile</h2>
+    <swiper-container [initial-slide]="slideOpts.initialSlide" [speed]="slideOpts.speed"
+      [slides-per-view]="slideOpts.slidesPerView" [space-between]="slideOpts.spaceBetween"
+      [centered-slides]="slideOpts.centeredSlides" [direction]="slideOpts.direction"
+      [pagination]="slideOpts.pagination">
+      <swiper-slide *ngFor="let account of accounts; let i = index">
+        <ion-card class="balance-card">
+          <ion-card-content>
+            <div class="card-design">
+              <div class="card-top">
+                <ion-icon name="card-outline" class="chip-icon"></ion-icon>
+                <ion-icon name="wifi-outline" class="nfc-icon"></ion-icon>
+              </div>
+              <div class="card-number">
+                <span>{{ account.accountNumber }}</span>
+              </div>
+              <div class="card-bottom">
+                <h1>${{ account.balance.toFixed(2) }}</h1>
+                <div class="card-logo">
+                  <div class="circle orange"></div>
+                  <div class="circle yellow"></div>
+                </div>
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </swiper-slide>
+    </swiper-container>
+  </div>
+
+  <!-- Refresher -->
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <!-- Transactions List -->
+  <ion-list class="transactions-list" lines="none">
+    <ion-list-header>
+      <ion-label>Recent Transactions</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let transaction of filteredTransactions" class="transaction-item">
+      <ion-icon
+        [name]="transaction.type === 'Deposit' ? 'arrow-down-circle-outline' : transaction.type === 'Withdrawal' ? 'arrow-up-circle-outline' : 'swap-horizontal-outline'"
+        slot="start"
+        [color]="transaction.type === 'Deposit' ? 'success' : transaction.type === 'Withdrawal' ? 'danger' : 'primary'"></ion-icon>
+      <ion-label>
+        <h3>{{ transaction.description }}</h3>
+        <p>{{ transaction.date }} • {{ transaction.status }}</p>
+      </ion-label>
+      <ion-note slot="end" [color]="transaction.amount >= 0 ? 'success' : 'danger'">
+        {{ transaction.amount >= 0 ? '+' : '' }}${{ transaction.amount.toFixed(2) }}
+      </ion-note>
+    </ion-item>
+  </ion-list>
+</ion-content>

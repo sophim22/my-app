@@ -1,0 +1,125 @@
+<ion-content>
+  <!-- Updated Top Section -->
+  <div class="top-section">
+    <div class="user-greeting">
+      <p>Welcome back!</p>
+      <h2>Anabella Angela</h2>
+    </div>
+    <ion-buttons class="notification-button">
+      <ion-button>
+        <ion-icon name="notifications-outline"></ion-icon>
+        <span class="notification-badge">1</span>
+      </ion-button>
+    </ion-buttons>
+  </div>
+
+  <!-- Swipeable Balance Cards (Horizontal) -->
+  <swiper-container [initial-slide]="slideOpts.initialSlide" [speed]="slideOpts.speed"
+    [slides-per-view]="slideOpts.slidesPerView" [space-between]="slideOpts.spaceBetween"
+    [centered-slides]="slideOpts.centeredSlides" [direction]="slideOpts.direction" [pagination]="slideOpts.pagination">
+    <swiper-slide>
+      <ion-card class="balance-card">
+        <ion-card-content>
+          <div class="card-design">
+            <div class="card-top">
+              <ion-icon name="card-outline" class="chip-icon"></ion-icon>
+              <ion-icon name="wifi-outline" class="nfc-icon"></ion-icon>
+            </div>
+            <div class="card-number">
+              <span>**** **** **** 1990</span>
+            </div>
+            <div class="card-bottom">
+              <h1>$10,250.00</h1>
+              <div class="card-logo">
+                <div class="circle orange"></div>
+                <div class="circle yellow"></div>
+              </div>
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </swiper-slide>
+    <swiper-slide>
+      <ion-card class="balance-card">
+        <ion-card-content>
+          <div class="card-design">
+            <div class="card-top">
+              <ion-icon name="card-outline" class="chip-icon"></ion-icon>
+              <ion-icon name="wifi-outline" class="nfc-icon"></ion-icon>
+            </div>
+            <div class="card-number">
+              <span>**** **** **** 4567</span>
+            </div>
+            <div class="card-bottom">
+              <h1>$5,500.00</h1>
+              <div class="card-logo">
+                <div class="circle orange"></div>
+                <div class="circle yellow"></div>
+              </div>
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </swiper-slide>
+  </swiper-container>
+
+  <!-- Quick Actions -->
+  <ion-grid class="quick-actions">
+    <ion-row>
+      <ion-col size="4">
+        <ion-button expand="block" fill="solid" color="primary">
+          <ion-icon name="people-outline" slot="start"></ion-icon>
+          Accounts
+        </ion-button>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button expand="block" fill="solid" color="primary">
+          <ion-icon name="swap-horizontal-outline" slot="start"></ion-icon>
+          Fund Transfer
+        </ion-button>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button expand="block" fill="solid" color="primary">
+          <ion-icon name="document-text-outline" slot="start"></ion-icon>
+          Statement
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="4">
+        <ion-button expand="block" fill="solid" color="primary">
+          <ion-icon name="cash-outline" slot="start"></ion-icon>
+          Loans
+        </ion-button>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button expand="block" fill="solid" color="primary">
+          <ion-icon name="wallet-outline" slot="start"></ion-icon>
+          Deposit
+        </ion-button>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button expand="block" fill="solid" color="primary">
+          <ion-icon name="ellipsis-horizontal-outline" slot="start"></ion-icon>
+          More
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Enhanced News & Promotions -->
+  <ion-list class="promotions-list" lines="none">
+    <ion-list-header>
+      <ion-label>News & Promotions</ion-label>
+    </ion-list-header>
+    <ion-item class="promo-item">
+      <ion-thumbnail slot="start">
+        <img src="../../assets/ads-banner.png" alt="Promotion Banner" />
+      </ion-thumbnail>
+      <ion-label class="promo-label">
+        <h3>Merry Christmas</h3>
+        <p>Special offers for the holiday season!</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

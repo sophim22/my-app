@@ -1,8 +1,7 @@
 {
-  "name": "MyApp",
+  "name": "my-finance-app",
   "integrations": {
     "capacitor": {}
   },
-  "type": "angular",
-  "id": "222cb49c"
+  "type": "angular-standalone"
 }
